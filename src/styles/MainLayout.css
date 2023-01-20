@@ -1,0 +1,120 @@
+@font-face {
+  font-family: sans;
+  src: url(https://artafp.ir/FontsFree-Net-ir_sans.ttf);
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  background-color: #2f2f44f2;
+  color: rgb(255, 255, 255);
+  font-family: sans;
+}
+h1 {
+  font-size: 26px !important;
+}
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 26px !important;
+}
+h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px !important;
+}
+h4 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 22px !important;
+}
+h5 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px !important;
+}
+h6 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px !important;
+}
+.h1 {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+}
+.myContainerMain {
+  direction: rtl;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+.myContainer {
+  direction: rtl;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  display: flex;
+  justify-content: space-between;
+}
+.myContainer404 {
+  direction: rtl;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding-top: 100px;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+
+.Header {
+  direction: rtl;
+  width: 100%;
+  height: auto;
+  background-color: #2f2f44f2;
+  padding: 15px;
+  margin: auto;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  display: flex;
+  box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.114);
+  justify-content: space-between;
+}
+.barlist {
+  padding-top: 30px;
+  width: 30%;
+  height: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.containerBlog {
+  width: 70%;
+  height: auto;
+  padding-top: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.imageBlogTitle {
+  width: 100%;
+  border: 5px solid white;
+  border-radius: 20px;
+}
+pre {
+  direction: ltr;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.384);
+  background-color: aliceblue;
+  font-weight: bold;
+  border:  2px solid white;
+}
+li{
+  cursor: pointer;
+}
