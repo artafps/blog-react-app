@@ -6,45 +6,93 @@
 body {
   width: 100%;
   margin: auto;
-  background-color: #2f2f44f2;
-  color: rgb(255, 255, 255);
+  background-color: #fffffff2;
+  color: #2f2f44f2;
   font-family: sans;
 }
-h1 {
+.containerBlog h1 {
   font-size: 26px !important;
 }
-h2 {
+.containerBlog h2 {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 26px !important;
 }
-h3 {
+.containerBlog h3 {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 24px !important;
 }
-h4 {
+.containerBlog h4 {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 22px !important;
 }
-h5 {
+.containerBlog h5 {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 20px !important;
 }
-h6 {
+.containerBlog h6 {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 18px !important;
 }
+.containerBlog pre {
+  direction: ltr;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.486);
+  background-color: rgba(241, 241, 241, 0.616);
+  font-weight: bold;
+  border: 2px solid white;
+}
+.barlist  li {
+  cursor: pointer;
+}
+.containerBlog table {
+  direction: ltr;
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6;
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+}
+.containerBlog  img{
+  width: 100%;
+  border: 5px solid #2f2f44f2;
+  border-radius: 20px;
+}
+.containerBlog video{
+  width: 100%;
+  border: 5px solid #2f2f44f2;
+  border-radius: 20px;
+}
 .h1 {
   font-size: 24px;
-  color: rgb(255, 255, 255);
+  color: #2f2f44f2;
 }
 .myContainerMain {
   direction: rtl;
-  width: 70%;
+  width: 90%;
   height: auto;
   margin: auto;
   padding-right: 2.5%;
@@ -74,8 +122,8 @@ h6 {
   direction: rtl;
   width: 100%;
   height: auto;
-  background-color: #2f2f44f2;
-  padding: 15px;
+  background-color: #fffffff2;
+  padding: 1%;
   margin: auto;
   padding-right: 2.5%;
   padding-left: 2.5%;
@@ -99,22 +147,16 @@ h6 {
 }
 .imageBlogTitle {
   width: 100%;
-  border: 5px solid white;
+  border: 5px solid #2f2f44f2;
   border-radius: 20px;
 }
-pre {
-  direction: ltr;
-  border-radius: 10px;
+
+.HeaderBarlist {
   width: 100%;
-  height: auto;
-  padding: 3%;
-  margin-top: 20px;
+  height: 50px;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, 0.384);
+  margin-top: 20px;
+  padding: 2.5%;
+  border-bottom: 3px solid #2f2f44f2;
   background-color: aliceblue;
-  font-weight: bold;
-  border:  2px solid white;
-}
-li{
-  cursor: pointer;
 }

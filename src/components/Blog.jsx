@@ -40,7 +40,7 @@ function Blog() {
           <Fragment>
             <img
               src={
-                "https://raw.githubusercontent.com/artafp/artafp/main/" +
+                "https://artafp.ir/" +
                 blog[0].url +
                 "/index.jpg"
               }
