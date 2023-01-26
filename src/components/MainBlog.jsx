@@ -1,12 +1,11 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-import  ReactMarkdown from 'react-markdown';
 import { marked } from './../../node_modules/marked/src/marked';
 
 import MainLayout from "./../layouts/MainLayout";
 import BarLayout from "./../layouts/BarLayout";
 
-import { getDataJson, getHtmlPage } from "./../getData";
+import { getDatatxt, getHtmlPage } from "./../getData";
 import { Fragment } from "react";
 
 function MainBlog() {
@@ -17,7 +16,7 @@ function MainBlog() {
   useEffect(() => {
 
     if (blog === "") {
-      getDataJson().then((res) => {
+      getDatatxt().then((res) => {
         setBlog(res.data.filter((item) => item.nameurl === id));
       });
     }
