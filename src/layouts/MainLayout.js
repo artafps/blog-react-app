@@ -1,4 +1,4 @@
-import "./../styles/MainLayout.css";
+
 import Header from "./../components/Header";
 import { Fragment } from "react";
 function MainLayout(props) {
