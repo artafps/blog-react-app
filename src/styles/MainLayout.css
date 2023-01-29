@@ -10,7 +10,7 @@ body {
   color: #2f2f44f2;
   font-family: sans;
 }
-.barlist li{
+.barlist li {
   margin-top: 10px;
 }
 .containerBlog h1 {
@@ -54,7 +54,7 @@ body {
   font-weight: bold;
   border: 2px solid white;
 }
-.barlist  li {
+.barlist li {
   cursor: pointer;
 }
 .containerBlog table {
@@ -79,14 +79,22 @@ body {
   border-spacing: 2px;
   border-color: grey;
 }
-.containerBlog  img{
+.containerBlog img {
   width: 100%;
-  border: 5px solid #2f2f44f2;
+  border: 5px solid #2cbcfff2;
   border-radius: 20px;
 }
-.containerBlog video{
+.containerBlog video {
   width: 100%;
-  border: 5px solid #2f2f44f2;
+  border: 5px solid #2cbcfff2;
+  border-radius: 20px;
+}
+.containerBlog audio {
+  width: 100%;
+}
+.containerBlog iframe {
+  width: 100%;
+  border: 5px solid #2cbcfff2;
   border-radius: 20px;
 }
 .h1 {
@@ -160,7 +168,7 @@ body {
   height: 50px;
   margin-bottom: 20px;
   margin-top: 20px;
-  padding: 2.5%;
+  padding: 5%;
   border-bottom: 3px solid #2f2f44f2;
   background-color: aliceblue;
 }

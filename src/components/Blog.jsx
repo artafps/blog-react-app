@@ -1,52 +1,47 @@
 import { useParams } from "react-router";
-import { useState, useEffect } from "react";
-import { marked } from './../../node_modules/marked/src/marked';
+import { useState, useEffect, Fragment } from "react";
+import { marked } from "./../../node_modules/marked/src/marked";
 
 import MainLayout from "./../layouts/MainLayout";
 import BarLayout from "./../layouts/BarLayout";
 
-import { getDatatxt, getHtmlPage } from "./../getData";
-import { Fragment } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 function Blog() {
-  const { id } = useParams();
-  const [blogHtml, setblogHtml] = useState("");
-  const [blog, setBlog] = useState("");
-  console.log(marked.parse(blogHtml));
+  const { url } = useParams();
+  const [blogHtml, setblogHtml] = useState("nodata");
+  const [blog, setblog] = useState([]);
+  const data = useSelector((state) => state.data);
   useEffect(() => {
+    if (blog.length === 0 && data.length > 0) {
+      let select = data.filter((item) => url === item.nameurl);
+      setblog(select);
 
-    if (blog === "") {
-      getDatatxt().then((res) => {
-        setBlog(res.data.filter((item) => item.nameurl === id));
-      });
-    }
-    if (blog !== "" && blog.length === 0) {
-      window.location.replace("http://localhost:3000/404");
-    }
+      if (select.length === 0) {
+        window.location.replace("http://localhost:3000/404");
+      }
 
-    if (blog.length > 0) {
-      getHtmlPage("https://artafp.ir/" + blog[0].url + "/README.md").then(
-        (res) => setblogHtml(res.data)
-      );
+      if (select.length > 0) {
+        axios
+          .get("https://artafp.ir/" + select[0].url + "/README.md")
+          .then((res) => {
+            setblogHtml(res.data);
+          });
+      }
     }
-  }, [blog]);
-
+  }, [data]);
   return (
     <MainLayout>
       <BarLayout />
       <div className="containerBlog">
-        {blog.length > 0 ? (
+        {blog.length > 0 && blogHtml !== "nodata" ? (
           <Fragment>
             <img
-              src={
-                "https://artafp.ir/" +
-                blog[0].url +
-                "/index.jpg"
-              }
+              src={"https://artafp.ir/" + blog[0].url + "/index.jpg"}
               className="imageBlogTitle"
             />
-            <div dangerouslySetInnerHTML={{ __html: marked.parse(blogHtml)  }} />
-            
+            <div dangerouslySetInnerHTML={{ __html: marked.parse(blogHtml) }} />
           </Fragment>
         ) : undefined}
       </div>
