@@ -6,8 +6,7 @@ const BarLayout = () => {
   const project = useSelector((state) => state.project);
 
   const navigateToBlog = (url) => {
-    console.log(url);
-    window.location.replace("/b/" + url);
+    window.location.replace(url);
   };
 
   return (
@@ -18,33 +17,42 @@ const BarLayout = () => {
           ? blog.map((item, i) => {
               if (i < 10)
                 return (
-                  <li key={item.id} onClick={() => navigateToBlog(item.nameurl)}>
+                  <li
+                    key={item.id}
+                    onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                  >
                     {item.title}
                   </li>
                 );
             })
           : undefined}
       </ul>
-      <div className="HeaderBarlist"> لاگ های مرتبط  </div>
+      <div className="HeaderBarlist"> لاگ های مرتبط </div>
       <ul>
-        {project.length !== 0
-          ? project.map((item, i) => {
+        {gblog.length !== 0
+          ? gblog.map((item, i) => {
               if (i < 10)
                 return (
-                  <li key={item.id} onClick={() => navigateToBlog(item.nameurl)}>
+                  <li
+                    key={item.id}
+                    onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                  >
                     {item.title}
                   </li>
                 );
             })
           : undefined}
-      </ul>      
+      </ul>
       <div className="HeaderBarlist">پروژه ها</div>
       <ul>
         {project.length !== 0
           ? project.map((item, i) => {
               if (i < 10)
                 return (
-                  <li key={item.id} onClick={() => navigateToBlog(item.nameurl)}>
+                  <li
+                    key={item.id}
+                    onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                  >
                     {item.title}
                   </li>
                 );
@@ -53,6 +61,10 @@ const BarLayout = () => {
       </ul>
 
       <div className="HeaderBarlist">صفحات دیگر</div>
+      <ul>
+        <li onClick={() => navigateToBlog("resume")}>رزومه</li>
+        <li onClick={() => navigateToBlog("/")}>صفحه اصلی</li>
+      </ul>
     </div>
   );
 };

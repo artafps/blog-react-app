@@ -4,13 +4,14 @@ import { marked } from "./../../node_modules/marked/src/marked";
 
 import MainLayout from "./../layouts/MainLayout";
 import BarLayout from "./../layouts/BarLayout";
-
+import config from "./../config.json";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
 function Blog() {
   const { url } = useParams();
   const [blogHtml, setblogHtml] = useState("nodata");
+  const [image, setimage] = useState("false");
   const [blog, setblog] = useState([]);
   const data = useSelector((state) => state.data);
   useEffect(() => {
@@ -23,25 +24,66 @@ function Blog() {
       }
 
       if (select.length > 0) {
-        axios
-          .get("https://artafp.ir/" + select[0].url + "/README.md")
-          .then((res) => {
+        if (select[0].backurl === "false") {
+          axios
+            .get(config.siteurl + select[0].url + "/README.md")
+            .then((res) => {
+              setblogHtml(res.data);
+            });
+          axios
+            .get(config.siteurl + select[0].url + "/index.jpg")
+            .then(() => {
+              setimage(true);
+            })
+            .catch(() => {
+              setimage(false);
+            });
+        } else {
+          axios.get(select[0].url + "/README.md").then((res) => {
             setblogHtml(res.data);
           });
+          axios
+            .get(select[0].url + "/index.jpg")
+            .then(() => {
+              setimage(true);
+            })
+            .catch(() => {
+              setimage(false);
+            });
+        }
       }
     }
   }, [data]);
+  console.log();
   return (
     <MainLayout>
       <BarLayout />
       <div className="containerBlog">
         {blog.length > 0 && blogHtml !== "nodata" ? (
           <Fragment>
-            <img
-              src={"https://artafp.ir/" + blog[0].url + "/index.jpg"}
-              className="imageBlogTitle"
+            {image ? (
+              <img
+                src={
+                  blog[0].backurl === "false"
+                    ? "https://artafp.ir/" + blog[0].url + "/index.jpg"
+                    : blog[0].url + "/index.jpg"
+                }
+                className="imageBlogTitle"
+              />
+            ) : null}
+
+            <div
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(
+                  blogHtml
+                    .replaceAll("/blob", "")
+                    .replaceAll(
+                      "https://github.com",
+                      "https://raw.githubusercontent.com"
+                    )
+                ),
+              }}
             />
-            <div dangerouslySetInnerHTML={{ __html: marked.parse(blogHtml) }} />
           </Fragment>
         ) : undefined}
       </div>
