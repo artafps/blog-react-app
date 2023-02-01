@@ -41,10 +41,10 @@ function MainBlog() {
       if (data.length > 0) {
         return data[0].img;
       } else {
-        return "../../img/fp1.png";
+        return "../../img/fp2.png";
       }
     } else {
-      return "../../img/fp1.png";
+      return "../../img/fp2.png";
     }
   };
   const navigateToBlog = (url) => {
@@ -98,8 +98,7 @@ function MainBlog() {
         <hr />
         {blog.length > 0 ? (
           <Fragment>
-            <h3> بلاگ ها</h3>
-            <hr />
+            <h3 className="alert alert-primary"> بلاگ ها</h3>
           </Fragment>
         ) : null}
 
@@ -121,7 +120,7 @@ function MainBlog() {
                         <p className="card-text">{item.blog}</p>
                         <button
                           onClick={() => navigateToBlog("/b/" + item.nameurl)}
-                          className="btn btn-primary"
+                          className="btn btn-primary cw"
                         >
                           برو به بلاگ
                         </button>
@@ -137,7 +136,7 @@ function MainBlog() {
             <br />
             <center>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary cw"
                 onClick={() => {
                   setblogMore(blogMore + 2);
                 }}
@@ -150,8 +149,7 @@ function MainBlog() {
         {Gblog.length > 0 ? (
           <Fragment>
             <hr />
-            <h3> بلاگ های گروهی</h3>
-            <hr />
+            <h3 className="alert alert-primary"> بلاگ های گروهی</h3>
           </Fragment>
         ) : null}
         <div className="blogs">
@@ -172,7 +170,7 @@ function MainBlog() {
                         <p className="card-text">{item.blog}</p>
                         <button
                           onClick={() => navigateToBlog("/b/" + item.nameurl)}
-                          className="btn btn-primary"
+                          className="btn btn-primary cw"
                         >
                           برو به بلاگ
                         </button>
@@ -188,7 +186,7 @@ function MainBlog() {
             <br />
             <center>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary cw"
                 onClick={() => {
                   setgblogMore(gblogMore + 2);
                 }}
@@ -201,8 +199,7 @@ function MainBlog() {
         {project.length > 0 ? (
           <Fragment>
             <hr />
-            <h3> پروژه ها</h3>
-            <hr />
+            <h3 className="alert alert-primary"> پروژه ها</h3>
           </Fragment>
         ) : null}
         <div className="blogs">
@@ -221,9 +218,12 @@ function MainBlog() {
                       <div className="card-body">
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.blog}</p>
-                        <a href="#" className="btn btn-primary">
-                          برو به لاگ
-                        </a>
+                        <button
+                          onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                          className="btn btn-primary cw"
+                        >
+                          برو به بلاگ
+                        </button>
                       </div>
                     </div>
                   );
@@ -236,7 +236,7 @@ function MainBlog() {
             <br />
             <center>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary cw"
                 onClick={() => {
                   setprojectMore(projectMore + 2);
                 }}

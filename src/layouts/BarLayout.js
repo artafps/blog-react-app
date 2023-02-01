@@ -11,7 +11,7 @@ const BarLayout = () => {
 
   return (
     <div className="barlist">
-      <div className="HeaderBarlist">بلاگ ها</div>
+      {blog.length !== 0 ? <div className="HeaderBarlist">بلاگ ها</div> : null}
       <ul>
         {blog.length !== 0
           ? blog.map((item, i) => {
@@ -27,7 +27,10 @@ const BarLayout = () => {
             })
           : undefined}
       </ul>
-      <div className="HeaderBarlist"> لاگ های مرتبط </div>
+      {gblog.length !== 0 ? (
+        <div className="HeaderBarlist"> بلاگ های مرتبط </div>
+      ) : null}
+
       <ul>
         {gblog.length !== 0
           ? gblog.map((item, i) => {
@@ -43,7 +46,9 @@ const BarLayout = () => {
             })
           : undefined}
       </ul>
-      <div className="HeaderBarlist">پروژه ها</div>
+      {project.length !== 0 ? (
+        <div className="HeaderBarlist">پروژه ها</div>
+      ) : null}
       <ul>
         {project.length !== 0
           ? project.map((item, i) => {

@@ -316,8 +316,7 @@ body {
 }
 .blogs {
   display: flex;
-  align-content: flex-start
-  ;
+  align-content: flex-start;
   flex-wrap: wrap;
 }
 .blogs img {

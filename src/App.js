@@ -46,7 +46,7 @@ function App() {
                   dispatch(
                     add_image({
                       url: item.url,
-                      img: "./../../img/fp1.png",
+                      img: "./../../img/fp2.png",
                     })
                   );
                 }
@@ -69,7 +69,7 @@ function App() {
                   dispatch(
                     add_image({
                       url: item.url,
-                      img: "./../../img/fp1.png",
+                      img: "./../../img/fp2.png",
                     })
                   );
                 }
