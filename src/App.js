@@ -24,12 +24,10 @@ import {
 function App() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data);
-  const imglist = useSelector((state) => state.imagelist);
   useEffect(() => {
     if (data.length == 0) {
       axios.get(config.data).then((res) => {
         dispatch(save_data(res.data.reverse()));
-        console.log(res.data);
         res.data.map((item, i) => {
           if (item.backurl === "true") {
             axios

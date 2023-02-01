@@ -1,8 +1,7 @@
 {
-  "footerbio":"https://github.com/artafp",
-  "siteurl":"https://artafp.ir/",
-  "data": "https://artafp.ir/data.txt",
-  "blog": "https://artafp.ir/blog.txt",
-  "project": "https://artafp.ir/project.txt",
-  "gblog": "https://artafp.ir/gblog.txt"
+  "siteurl":"https://raw.githubusercontent.com/artafp/artafp/main/",
+  "data": "https://raw.githubusercontent.com/artafp/artafp/main/data.txt",
+  "blog": "https://raw.githubusercontent.com/artafp/artafp/main/blog.txt",
+  "project": "https://raw.githubusercontent.com/artafp/artafp/main/project.txt",
+  "gblog": "https://raw.githubusercontent.com/artafp/artafp/main/gblog.txt"
 }
