@@ -6,7 +6,7 @@ import { marked } from "marked";
 import config from "./../config.json";
 
 import axios from "axios";
-import { resolveTo } from "@remix-run/router";
+import { useNavigate } from 'react-router-dom';
 function MainBlog() {
   const blog = useSelector((state) => state.blog);
   const Gblog = useSelector((state) => state.gblog);
@@ -47,8 +47,9 @@ function MainBlog() {
       return "../../img/fp2.png";
     }
   };
+  const nvigate = useNavigate();
   const navigateToBlog = (url) => {
-    window.location.replace(url);
+    nvigate(url);
   };
 
   return (

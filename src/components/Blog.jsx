@@ -66,7 +66,7 @@ function Blog() {
               <img
                 src={
                   blog[0].backurl === "false"
-                    ? "https://artafp.ir/" + blog[0].url + "/index.jpg"
+                    ? config.siteurl + blog[0].url + "/index.jpg"
                     : blog[0].url + "/index.jpg"
                 }
                 className="imageBlogTitle"
