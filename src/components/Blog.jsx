@@ -13,9 +13,11 @@ function Blog() {
   const [blogHtml, setblogHtml] = useState("nodata");
   const [image, setimage] = useState("false");
   const [blog, setblog] = useState([]);
+  const [Url, seturl] = useState("");
   const data = useSelector((state) => state.data);
   useEffect(() => {
-    if (blog.length === 0 && data.length > 0) {
+    if ((blog.length === 0 && data.length > 0) || url !== Url) {
+      seturl(url);
       let select = data.filter((item) => url === item.nameurl);
       setblog(select);
 
@@ -53,8 +55,7 @@ function Blog() {
         }
       }
     }
-  }, [data]);
-  console.log();
+  }, [data, url]);
   return (
     <MainLayout>
       <BarLayout />

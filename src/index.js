@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import "./styles/bootstrap.min.css";
 import "./styles/MainLayout.css";
 import App from "./App";
 import { store } from "./redux/store/index";

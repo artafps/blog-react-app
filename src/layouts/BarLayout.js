@@ -1,12 +1,14 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const BarLayout = () => {
+  const nvigate = useNavigate();
   const blog = useSelector((state) => state.blog);
   const gblog = useSelector((state) => state.gblog);
   const project = useSelector((state) => state.project);
 
   const navigateToBlog = (url) => {
-    window.location.replace(url);
+    nvigate(url);
   };
 
   return (
@@ -19,7 +21,7 @@ const BarLayout = () => {
                 return (
                   <li
                     key={item.id}
-                    onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                    onClick={() => navigateToBlog("/b/" + item.nameurl+"/")}
                   >
                     {item.title}
                   </li>
@@ -38,7 +40,7 @@ const BarLayout = () => {
                 return (
                   <li
                     key={item.id}
-                    onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                    onClick={() => navigateToBlog("/b/" + item.nameurl+"/")}
                   >
                     {item.title}
                   </li>
@@ -56,7 +58,7 @@ const BarLayout = () => {
                 return (
                   <li
                     key={item.id}
-                    onClick={() => navigateToBlog("/b/" + item.nameurl)}
+                    onClick={() => navigateToBlog("/b/" + item.nameurl+"/")}
                   >
                     {item.title}
                   </li>
@@ -67,7 +69,7 @@ const BarLayout = () => {
 
       <div className="HeaderBarlist">صفحات دیگر</div>
       <ul>
-        <li onClick={() => navigateToBlog("resume")}>رزومه</li>
+        <li onClick={() => navigateToBlog("/resume/")}>رزومه</li>
         <li onClick={() => navigateToBlog("/")}>صفحه اصلی</li>
       </ul>
     </div>
