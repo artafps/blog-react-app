@@ -344,6 +344,11 @@ body {
   }
   .containerBlog {
     width: 100%;
+    padding-right: 2.5px;
+    padding-left: 2.5px;
+  }
+  .Header{
+    direction: ltr;
   }
   .card {
     width: 100%;
@@ -351,6 +356,8 @@ body {
   }
   .myContainerMain {
     width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
   }
   .Footer {
     display: block;
