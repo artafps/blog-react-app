@@ -8,7 +8,7 @@ const BarLayout = () => {
   const project = useSelector((state) => state.project);
 
   const navigateToBlog = (url) => {
-    nvigate(url);
+    nvigate(url+"#");
   };
 
   return (

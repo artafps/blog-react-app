@@ -322,8 +322,59 @@ body {
 .blogs img {
   height: 250px;
   border-radius: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .card {
   width: 45.5%;
   margin: 1%;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 1100px) {
+  .barlist {
+    display: none;
+  }
+  .containerBlog {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .barlist {
+    display: none;
+  }
+  .containerBlog {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    margin: 1%;
+  }
+  .myContainerMain {
+    width: 100%;
+  }
+  .Footer {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: none;
+  }
+  .textFooter {
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .powerbyFooterM {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+  }
+  .copyright {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #hap {
+    display: none;
+  }
 }

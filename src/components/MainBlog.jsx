@@ -49,11 +49,13 @@ function MainBlog() {
   };
   const nvigate = useNavigate();
   const navigateToBlog = (url) => {
-    nvigate(url);
+    nvigate(url +"#");
   };
 
   return (
     <MainLayout>
+      
+      <title>arta dev - HOME</title>
       <BarLayout />
       <div className="containerBlog">
         {blog1 !== "" ? (

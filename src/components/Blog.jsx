@@ -7,6 +7,7 @@ import BarLayout from "./../layouts/BarLayout";
 import config from "./../config.json";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 function Blog() {
   const { url } = useParams();
@@ -15,14 +16,15 @@ function Blog() {
   const [blog, setblog] = useState([]);
   const [Url, seturl] = useState("");
   const data = useSelector((state) => state.data);
+  const navigate = useNavigate()
   useEffect(() => {
     if ((blog.length === 0 && data.length > 0) || url !== Url) {
       seturl(url);
       let select = data.filter((item) => url === item.nameurl);
       setblog(select);
-
+      
       if (select.length === 0) {
-        window.location.replace("http://localhost:3000/404");
+        navigate("/404");
       }
 
       if (select.length > 0) {
@@ -62,6 +64,7 @@ function Blog() {
       <div className="containerBlog">
         {blog.length > 0 && blogHtml !== "nodata" ? (
           <Fragment>
+            <title>arta dev - {blog[0].title}</title>
             {image ? (
               <img
                 src={

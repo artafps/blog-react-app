@@ -7,7 +7,6 @@ import {
   CallCalling,
 } from "iconsax-react";
 
-import config from "./../config.json";
 
 const Footer = () => {
   return (
@@ -39,7 +38,7 @@ const Footer = () => {
             <h6>
               {" "}
               <Link21 size="24" color="#697689" variant="Bulk" />{" "}
-              <a href="http://artafp.ir">artafp.ir</a>
+              <a href="http://rtadev.ir">rtadev.ir</a>
             </h6>
             <h6>
               {" "}

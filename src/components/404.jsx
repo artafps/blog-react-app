@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 function Page404() {
   const navigate = useNavigate()
   const backHome = () =>{
-    navigate("/")
+    navigate("/"+"#")
   }
   return (
     <MainLayout container="404">
+    <title>arta dev - 404</title>
       <center>
         <h1>404</h1>
         <p>

@@ -13,6 +13,7 @@ const Resume = () => {
   }, []);
   return (
     <Fragment>
+      <title>arta dev - RESUME</title>
       <MainLayout>
         <div className="containerResume">
           {resume !== "" ? (
