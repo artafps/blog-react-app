@@ -1,3 +1,7 @@
+
+# create cv and blog project db power github and
+
+# install and run
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
